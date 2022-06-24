@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "esbuild-svelte": "^0.7.1",
+    "svelte": "^3.48.0",
+    "svelte-preprocess": "^4.10.7"
+  },
+  "name": "fiwa-ide",
+  "description": "IDE for Fiwa",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "codemirror.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yapcheahshen/fiwa-ide.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yapcheahshen/fiwa-ide/issues"
+  },
+  "homepage": "https://github.com/yapcheahshen/fiwa-ide#readme"
+}
