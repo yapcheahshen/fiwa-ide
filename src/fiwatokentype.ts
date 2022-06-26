@@ -1,6 +1,6 @@
-import {Fiwa,TypeChecker,TokenType,tokenTypeName} from 'fiwa';
+import {Fiwa,TypeChecker,Namer} from 'fiwa';
 const depthSegment=tokens=>{
-  const depths=tokens.map(it=>it[4]);
+  const depths=tokens.map(it=>it[3]);
   const starts=tokens.map(it=>it[1]);
   const segments=[];
   let d=0, start=-1;
@@ -12,7 +12,6 @@ const depthSegment=tokens=>{
     d=depths[i];
   }
   return segments;
-  console.log(depths,segments)
 }
 
 export const fiwaTokenTypes=(doc,lang)=>{
@@ -31,12 +30,10 @@ export const fiwaTokenTypes=(doc,lang)=>{
       }
 
   	  for (j=0;j<r.length;j++) {
-  	 	  const [tk,s,e,tt,depth,stackeffect]=r[j];
-  	 	  const typename=tokenTypeName(tt);
-      
-  	 	  if (typename=='symbol') extra++ ;else extra=0;
+  	 	  const [tk,s,e,depth]=r[j];
+  	 	  const typename=Namer.instType(tk);
  		    tk.trim()&&typename&&doc.markText({line:i,ch:s},{line:i,ch:e},
- 		     {className:'tt_'+typename+(extra?(extra%2):'')})  	 		
+ 		     {className:'tt_'+typename})  	 		
   	 }
   }
 

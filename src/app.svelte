@@ -17,7 +17,7 @@ const setSourceText=()=>{
 }
 onMount(()=>{
   editor = new CodeMirror(document.querySelector('.code'), {
-  	lineNumbers: true, lineWrapping:true
+  	lineNumbers: true, lineWrapping:true, theme:'ambiance'
   });
   console.clear()
   setSourceText(checked);	
@@ -37,7 +37,7 @@ $: editor&&setSourceText(checked);
 
 
 </script>
-<label><input type="checkbox" bind:checked>中文</label>
+<label><input type="checkbox" bind:checked>中</label>
 <div class="code"></div>
 <div id="disassembly">Compile</div>
 
